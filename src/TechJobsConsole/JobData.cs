@@ -49,7 +49,7 @@ namespace TechJobsConsole
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                if (aValue.ToUpper().Contains(value.ToUpper()))
                 {
                     jobs.Add(row);
                 }
@@ -68,7 +68,7 @@ namespace TechJobsConsole
             {
                 foreach (KeyValuePair<string, string> jobdata in row)
                 {
-                    if (jobdata.Value.Contains(value) && (!jobs.Contains(row)))
+                    if (jobdata.Value.ToUpper().Contains(value.ToUpper()) && (!jobs.Contains(row)))
                     {
                         jobs.Add(row);
                     }
